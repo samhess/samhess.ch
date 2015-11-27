@@ -1,5 +1,11 @@
-# [Sam's Node Tutorial for Beginners](www.samhess.ch)
+# [Sam's Node Tutorial for Beginners](http://www.samhess.ch)
 Basic Website Example using Node.js, Express, Jade and Foundation
+
+## Development Environment
+  * [Webstorm JavaScript IDE](https://www.jetbrains.com/webstorm/)
+  * [Node.js and npm](https://nodejs.org)
+  * [Bower](http://bower.io/), install with ```npm install -g bower```
+ 
 ## Components
 This sample website uses the following web components
   * [Express](https://github.com/strongloop/express)
