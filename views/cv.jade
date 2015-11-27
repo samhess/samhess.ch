@@ -1,0 +1,283 @@
+extends layout
+block content
+    style.
+        table {
+            font-size: medium;
+            width: 100%;
+        }
+
+        tbody {
+            border: none;
+        }
+        tr th {
+            text-align: left;
+        }
+
+        td {
+            vertical-align: top;
+        }
+
+        tbody th, tbody td {
+            padding: 0.2rem 0.2rem 0.2rem 0.0rem
+        }
+
+        tr th.first1 {
+            width: 15%;
+        }
+        tr th.first {
+            width: 25%;
+        }
+        td p {
+            margin: 0;
+        }
+        tbody tr:nth-child(even) {
+            background-color: white;
+        }
+
+        @page {
+            size: A4;
+        }
+
+        .page {
+        }
+
+        @media print {
+            html, body {
+                width: 210mm;
+                height: 297mm;
+                /* border: 1px solid grey;*/
+            }
+
+            .row {page-break-inside: avoid;}
+
+            hr, footer, .top-bar {
+                display: none;
+            }
+
+            .row {
+                /* border: 1px solid red; */
+                padding: 0;
+            }
+
+            a[href]:after {
+                content: none !important;
+            }
+        }
+
+    .page
+        div.row
+            div.medium-12.columns
+                h1 Curriculum Vitae
+
+                p Here is my CV. Please do not hesitate to contact me, if you are interested in a collaboration.
+                hr
+        div.row
+            div.medium-12.columns
+                h2 Personal Data
+                table
+                    tr
+                        th(width='15%')
+                        th
+                        th
+                    tr
+                        td Name
+                        td Samuel Hess
+                        td(rowspan=7)
+                            img(class='thumbnail', src='images/samhess.jpg', width='200px', style='padding:0; margin:0; float:right')
+                    tr
+                        td Address
+                        td
+                            p Oberer Graben 26
+                            p 8400 Winterthur
+                    tr
+                        td Telephone
+                        td +41 78 949 88 55
+                    tr
+                        td E-mail
+                        td sam.hess@me.com
+                    tr
+                        td Age
+                        td 37
+                    tr
+                        td Marital status
+                        td unmarried
+                    tr
+                        td Availability
+                        td from January 2016
+        div.row
+            div.medium-12.columns
+                hr
+                h2 Summary
+                p
+                    | Holding a bachelor's degree in both electrical engineering and business administration gives me a deep understanding of technology driven industries
+                    | such as machine-to-machine (M2M) communication or Internet of Things (IoT) where I am an expert.
+                p
+                    | Having worked in product management and sales for over ten years at NetModule, I have gained experience in key functions of business from engineering over product management to sales.
+                    | As a product manager I learned to analyze the market, define and develop successful products and manage their life-cycles together with the team.
+                    | As an account manager I learned to win customers and support them in their own projects. Over the years, a considerable network within the industry
+                    | and beyond has resulted.
+                p
+                    | Now, it is time for the next step. Currently, I am looking for an interesting challenge aligned with my
+                    a(href='#experience')  experience and interests
+                    |  around the topics Internet, web and cloud. Anything further should be discussed individually. Your comments and offers are welcome.
+                hr
+        div.row
+            div.medium-12.columns
+                h2 Education
+                h3 Studies
+                table
+                    tr
+                        th.first1
+                        th
+                    tr
+                        td 2006 - 2015
+                        td
+                            p Business administration at <a href="http://www.unisg.ch/en/studium/bachelor/majorbetriebswirtschaftslehre">University of St. Gallen (HSG)</a>
+                            p Degree as Bachelor of Arts HSG in Business Administration (B.A. HSG)
+                            p Main fields of study are business administration, economics and law
+                            p Bachelor thesis on communication standards of the Internet of Things
+                table
+                    tr
+                        th.first1
+                        th
+                    tr
+                        td 1999 - 2003
+                        td
+                            p Electrical engineering at <a href="https://www.bfh.ch/en/studies/bachelor/engineering_and_information_technology/electrical_and_communication_engineering.html">Bern University of Applied Sciences (BFH)</a>
+                            p Degree as Ingenieur FH which corresponds to a Bachelor of Science in electrical engineeing (Dipl. Ing. FH)
+                            p Main fields of study are electrical engineering, mathematics and computer science
+                            p Specialization on Embedded Systems, communication networks and Internet
+                h3 Apprenticeship
+                    table
+                        tr
+                            th.first1
+                            th
+                        tr
+                            td 1995 - 1999
+                            td
+                                p Professional maturity of technical type at <a href="https://www.gibb.ch/Berufsmaturitaet">Gewerblich-Industrielle Berufsschule Bern (gibb)</a>
+                        tr
+                            td
+                            td Apprenticeship as electrician at Ascom Installationen AG in Bern
+                h3 Languages
+                    table
+                        tr
+                            th.first1
+                            th
+                        tr
+                            td German
+                            td Native language
+                        tr
+                            td English
+                            td Excellent, nearly native skills, <a href='http://www.europaeischer-referenzrahmen.de/'>GER C2</a> / Niveau II HSG, stay in Australia in 2004
+                        tr
+                            td French
+                            td Advanced, competent skills, <a href='http://www.europaeischer-referenzrahmen.de/'>GER C1</a> / Niveau I HSG
+                        tr
+                            td Spanish
+                            td Basic skills
+        div.row
+            div.medium-12.columns
+                hr
+                h2 Work History
+                table
+                    tr
+                        th.first1
+                        th
+                    tr
+                        td 2005 - 2015
+                        td
+                            a(href='http://www.netmodule.com') NetModule AG
+                            |, product manager and account manager
+                    tr
+                        td 2003
+                        td
+                            a(href='http://paulielektro.ch') Pauli Elektro AG
+                            |, electrician
+        div.row
+            div.medium-12.columns
+                hr
+                h2(id='experience') Experience and Interests
+                h3 Business Analysis and Consulting
+                    table
+                        tr
+                            th.first
+                            th
+                        tr
+                            td Environmental Analysis
+                            td Customer analysis, industry analysis / five forces (Porter), PEST analysis
+                        tr
+                            td Internal Analysis
+                            td Growth–share matrix (BGC), 7-S model (McKinsey), VRIO framework (Barney), identification of core competency (Prahalad/Hamel), SWOT analysis (Harvard Business School)
+                        tr
+                            td Business Model Innovation
+                            td Business Model Canvas (Osterwalder), St. Galler Business Model Navigator (Gassmann), St. Galler General Management Navigator (Müller-Stewens)
+                        tr
+                            td Business Process Management
+                            td Business Process Model and Notation (BPMN), Event-driven Process Chains (EPC), end-to-end digitization of processes
+                        tr
+                            td Technology Management
+                            td Technology Adoption Lifecycle (Rogers), The Innovator's Dilemma (Christensen)
+                        tr
+                            td Innovation Management
+                            td Open innovation (Chesbrough), Strategische Suchfeldanalyse (Müller-Stewens)
+                h3 M2M/IoT Communication
+                    table
+                        tr
+                            th.first
+                            th
+                        tr
+                            td Applications
+                            td Wireless Internet access, remote control, preventive maintenance, vehicle communication, passenger information, entertainment and WLAN
+                        tr
+                            td Networking
+                            td Routing, VPN, NAT, Firewall, Bridging
+                        tr
+                            td Wireless Standards
+                            td LTE, UMTS, GSM, WLAN, WPAN, BTLE
+                        tr
+                            td General Internet Protocols
+                            td IP, HTTP, FTP, SSH, IPSec, OpenVPN
+                        tr
+                            td IoT Protocols
+                            td IPv6, 6LoWPAN, CoAP, MQTT, WebSocket
+                h3 Product and Project Management
+                    table
+                        tr
+                            th.first
+                            th
+                        tr
+                            td Application Lifecycle Management
+                            td Requirements management, test and quality management, issue and defect management, resource management, build and release management, variant management
+                        tr
+                            td Development Methods
+                            td Agile methods, Scrum, continuous integration, V-model
+                    table
+                h3 Software and Web Development
+                    table
+                        tr
+                            th.first
+                            th
+                        tr
+                            td Frontend Development
+                            td
+                                p Responsive web design with HTML5, CSS3/Sass based on frameworks such as Bootstrap or Foundation
+                                p Single Page Applications (SPA) with Angular
+                        tr
+                            td Backend and API Development
+                            td
+                                p Web applications with Node.js using framework such as Express/Sails and mongoDB
+                                p HTTP REST APIs
+                        tr
+                            td Development Tools
+                            td WebStorm, Git, Subversion (SVN), Node Package manager (npm), Bower
+                        tr
+                            td Operating Systems
+                            td Windows, Linux Desktop/Server (Ubuntu, Debian), Mac OS, Embedded Linux (OpenWRT)
+                        tr
+                            td Virtualization
+                            td Linux Containers (LXC), VirtualBox
+                        tr
+                            td Cloud Computing
+                            td IaaS (OpenStack), PaaS (Cloud Foundry)
+

@@ -1,0 +1,64 @@
+extends layout
+block content
+    style.
+        i.fi-size {
+            font-size: 24px;
+        }
+
+        i.fi-facebook-style {
+            color: #3B5998;
+        }
+
+        i.fi-linkedin-style {
+            color: #007bb5;
+        }
+
+        i.fi-skype-style {
+            color: #12A5F4;
+        }
+        tbody tr:nth-child(even) {
+            background-color: white;
+        }
+        td p {
+            margin: 0;
+        }
+        td {
+            vertical-align: top;
+        }
+    div.row
+        div.medium-12.columns
+            h1 #{title}
+        div.large-6.columns
+            h2 Social Networks
+            ul.no-bullet
+                li
+                    i.fi-social-facebook.fi-facebook-style.fi-size
+                    a(href='http://www.fb.com/samhess.ch')   www.fb.com/samhess.ch
+                li
+                    i.fi-social-github.fi-size
+                    a(href='https://github.com/samhess')   https://github.com/samhess
+                li
+                    i.fi-social-linkedin.fi-linkedin-style.fi-size
+                    a(href="https://www.linkedin.com/in/samhess")   www.linkedin.com/in/samhess
+                li
+                    i.fi-social-skype.fi-skype-style.fi-size
+                    a(href='http://www.skype.com/de/')   samhess
+        div.large-6.columns
+            h2
+                a(href='/contact/vcard') vCard
+            table
+                tr
+                    td
+                       img(class='thumbnail', src='images/samhess-small.jpg', width='100px')
+
+                    td
+                        p Samuel Hess
+                        p Dipl. Ing. FH, B.A. HSG
+                        p Oberer Graben 26
+                        p 8400 Winterthur
+                        p Switzerland
+                        p
+                            a(href='mailto:mail@samhess.ch')
+                                i.fi-mail  mail@samhess.ch
+                        p
+                            i.fi-telephone  +41 78 949 88 55

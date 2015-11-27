@@ -1,0 +1,7 @@
+{
+    "name": "samhess.ch",
+    "dependencies": {
+       "foundation-sites": "~6.0.0",
+       "foundation-icon-fonts": "*"
+    }
+}

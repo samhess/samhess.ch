@@ -1,0 +1,48 @@
+doctype html
+html(class='no-js', lang='en')
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title= title
+        // link(rel='stylesheet', href='http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css')
+        link(rel='stylesheet', href='bower_components/foundation-sites/dist/foundation.css')
+        link(rel='stylesheet', href='bower_components/foundation-icon-fonts/foundation-icons.css')
+        link(rel='stylesheet', href='styles/vcard.css')
+    body
+        // div(class='top-bar', style='background-color:rgba(255,0,0,0.9);')
+        div(class='top-bar')
+            div(class='top-bar-left')
+                ul(class='dropdown menu', data-dropdown-menu, style='background-color:transparent')
+                    li.menu-text samhess.ch
+            div(class='top-bar-right')
+                ul(class='menu', style='background-color:transparent')
+                    // menu is stored in app.locals.navLinks object
+                    each item in navLinks
+                        if (item.label == title)
+                            li.active
+                                a(href='#{item.href}')= item.label
+                        else
+                            li
+                                a(href='#{item.href}')= item.label
+                    // li
+                        input(type='search', placeholder="Search")
+                    // li
+                        button(type='button', class='button') Search
+        - var notHome = (title != 'Home')
+        if notHome
+            br
+        block content
+        footer.row
+            div(class='large-12.columns')
+                hr(style='height: 12px; border: 0; box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5); margin-bottom:0.5rem;')
+                div.medium-6.columns
+                    p © Copyright 2015 Sam Hess
+                div.medium-6.columns
+                    p(style='text-align:right; margin:0;padding:0;') www.samhess.ch
+                        = path
+        script(src="bower_components/jquery/dist/jquery.js")
+        script(src="bower_components/foundation-sites/dist/foundation.min.js")
+        script(type='text/javascript').
+            $(document).foundation();
+            var doc = document.documentElement;
+            doc.setAttribute('data-useragent', navigator.userAgent);
