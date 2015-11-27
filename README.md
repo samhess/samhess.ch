@@ -1,5 +1,5 @@
-# samhess.ch
-Basic Website Example using Node.js, Express, Jade and Foundation - www.samhess.ch
+# [Sam's Node Tutorial for Beginners](www.samhess.ch)
+Basic Website Example using Node.js, Express, Jade and Foundation
 ## Components
 This sample website uses the following web components
   * [Express](https://github.com/strongloop/express)
