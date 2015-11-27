@@ -4,9 +4,9 @@ Basic Website Example using Node.js, Express, Jade and Foundation
 This sample website uses the following web components
   * [Express](https://github.com/strongloop/express)
   * [Jade template engine](https://github.com/jadejs/jade)
-  * [Foundation css framework](https://github.com/zurb/foundation-sites)
+  * [Foundation CSS framework](https://github.com/zurb/foundation-sites)
 
 ## Usage
-  - To install the bower_components in the folder assets run ```bower install```
-  - To install the node dependencies in the folder node_modules run ```npm install```
-  - Start the app witn ```npm start``` or ```node bin/www```
+1. To install the web dependencies (bower_components) in the folder */assets/bower_components* run ```bower install```
+2. To install the node dependencies in the folder */node_modules* run ```npm install```
+3. Start the app witn ```npm start``` or ```node bin/www```
