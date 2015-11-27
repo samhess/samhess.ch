@@ -14,6 +14,7 @@ app.set('view engine', 'jade');
 app.locals.pretty = true; // render pretty HTML
 app.locals.navLinks = [
   { label: 'Home',		key: 'home',		href: '/' },
+  { label: 'Quotes',		key: 'quotes',		href: '/quotes' },
   /*{ label: 'Blog',		key: 'blog',		href: '/blog' },*/
   { label: 'CV',		key: 'cv',		href: '/cv' },
   { label: 'Contact',		key: 'contact',		href: '/contact' }
