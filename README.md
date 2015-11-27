@@ -8,9 +8,11 @@ Basic Website Example using Node.js, Express, Jade and Foundation
  
 ## Components
 This sample website uses the following web components
-  * [Express](https://github.com/strongloop/express)
+  * [Express minimalist web framework for node](https://github.com/strongloop/express) 
+    * with [body-parser](https://github.com/expressjs/body-parser), [cookie-parser](https://github.com/expressjs/cookie-parser), [morgan](https://github.com/expressjs/morgan), [serve-favicon](https://github.com/expressjs/serve-favicon)
   * [Jade template engine](https://github.com/jadejs/jade)
   * [Foundation CSS framework](https://github.com/zurb/foundation-sites)
+  * [vCards-js library](https://github.com/enesser/vCards-js)
 
 ## Usage
 1. To install the web dependencies (bower_components) in the folder */assets/bower_components* run ```bower install```
