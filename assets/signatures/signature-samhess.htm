@@ -1,0 +1,82 @@
+<style>
+    @font-face {
+        font-family: "foundation-icons";
+        src: url("foundation-icons.eot");
+        src: url("foundation-icons.eot?#iefix") format("embedded-opentype"),
+        url("foundation-icons.woff") format("woff"),
+        url("foundation-icons.ttf") format("truetype"),
+        url("foundation-icons.svg#fontcustom") format("svg");
+        font-weight: normal;
+        font-style: normal;
+    }
+    html { font-family: sans-serif;
+    }
+    .fi-mail:before,.fi-telephone:before,.fi-web:before {
+        font-family: "foundation-icons";
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        text-decoration: inherit;
+    }
+    .fi-mail:before {
+        content: "\f16d";
+    }
+    .fi-telephone:before {
+        content: "\f1f8";
+    }
+    .fi-web:before { 
+        content: "\f212"; 
+        }
+    table {
+        background-color: #fcfcfc;
+
+        box-shadow: 5px 5px 20px 0px rgba(10, 10, 10, 0.2);
+        padding: 10px;
+    }
+    td p {
+        margin: 0 10px 2px 10px;
+    }
+
+    td {
+        vertical-align: top;
+    }
+    .thumbnail {
+        border: solid 1px #fefefe;
+        box-shadow: 0 0 0 1px rgba(10, 10, 10, 0.2);
+        display: inline-block;
+        line-height: 0;
+        max-width: 100%;
+        transition: box-shadow 200ms ease-out;
+        border-radius: 0;
+        margin-bottom: 1rem;
+    }
+    .thumbnail:hover, .thumbnail:focus {
+        box-shadow: 0 0 6px 1px rgba(33, 153, 232, 0.5);
+    }
+</style>
+<table>
+    <tr>
+        <td><img src="samhess-small.jpg" class="thumbnail"></td>
+        <td>
+            <p>Samuel Hess</p>
+
+            <p>Dipl. Ing. FH, B.A. HSG</p>
+
+            <p>Oberer Graben 26</p>
+
+            <p>8400 Winterthur</p>
+
+            <p>Switzerland</p>
+
+            <p><a href="mailto:sam.hess@me.com"><i class="fi-mail">  sam.hess@me.com</i></a></p>
+            
+            <p><a href="http://www.samhess.ch"><i class="fi-web">  www.samhess.ch</i></a></p>
+
+            <p><i class="fi-telephone"> +41 78 949 88 55</i></p>
+        </td>
+    </tr>
+</table>
