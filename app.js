@@ -5,7 +5,20 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var app = express();
+var app = express(),
+  i18n = require('i18n');
+
+
+i18n.configure({
+  // setup some locales - other locales default to en silently
+  locales: ['en', 'de'],
+
+  // sets a custom cookie name to parse locale settings from
+  cookie: 'yourcookiename',
+
+  // where to store json files - defaults to './locales'
+  directory: __dirname + '/locales'
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,6 +40,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+// i18n init parses req for language headers, cookies, etc.
+app.use(i18n.init);
 app.use(express.static(path.join(__dirname, 'assets')));
 // configure routes
 app.use('/', require('./routes/index'));

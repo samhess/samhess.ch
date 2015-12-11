@@ -17,15 +17,19 @@ block content
             vertical-align: top;
         }
 
+        td.colon::after {
+            content: ":";
+        }
+
         tbody th, tbody td {
             padding: 0.2rem 0.2rem 0.2rem 0.0rem
         }
 
         tr th.first1 {
-            width: 15%;
+            width: 20%;
         }
         tr th.first {
-            width: 25%;
+            width: 28%;
         }
         td p {
             margin: 0;
@@ -67,75 +71,107 @@ block content
     .page
         div.row
             div.medium-12.columns
-                h1 Curriculum Vitae
-
-                p Here is my CV. Please do not hesitate to contact me, if you are interested in a collaboration.
+                h1 #{ __('Curriculum Vitae') }
+                p #{ __('Here is my CV. Please do not hesitate to contact me, if you are interested in a collaboration.') }
                 hr
         div.row
             div.medium-12.columns
-                h2 Personal Data
+                h2 #{ __('Personal Data') }
                 table
                     tr
                         th(width='15%')
                         th
                         th
                     tr
-                        td Name
+                        td.colon Name
                         td Samuel Hess
                         td(rowspan=7)
                             img(class='thumbnail', src='images/samhess.jpg', width='200px', style='padding:0; margin:0; float:right')
                     tr
-                        td Address
+                        td.colon #{ __('Address') }
                         td
                             p Oberer Graben 26
                             p 8400 Winterthur
                     tr
-                        td Telephone
+                        td.colon #{ __('Telephone') }
                         td +41 78 949 88 55
                     tr
-                        td E-mail
-                        td sam.hess@me.com
+                        td.colon #{ __('E-mail') }
+                        td
+                            a(href='mailto:sam.hess@me.com') sam.hess@me.com
                     tr
-                        td Age
-                        td 37
+                        td.colon #{ __('Age') }
+                        - var year = 1978
+                        - var age = new Date().getFullYear()-year
+                        td #{ age }
                     tr
-                        td Marital status
-                        td unmarried
+                        td.colon #{ __('Marital status') }
+                        td #{ __('unmarried') }
                     tr
-                        td Availability
-                        td from January 2016
+                        td.colon #{ __('Availability') }
+                        td #{ __('from January 2016') }
         div.row
             div.medium-12.columns
                 hr
-                h2 Summary
-                p
-                    | Holding a bachelor's degree in both electrical engineering and business administration gives me a deep understanding of technology driven industries
-                    | such as machine-to-machine (M2M) communication or Internet of Things (IoT) where I am an expert.
-                p
-                    | Having worked in product management and sales for over ten years at NetModule, I have gained experience in key functions of business from engineering over product management to sales.
-                    | As a product manager I learned to analyze the market, define and develop successful products and manage their life-cycles together with the team.
-                    | As an account manager I learned to win customers and support them in their own projects. Over the years, a considerable network within the industry
-                    | and beyond has resulted.
-                p
-                    | Now, it is time for the next step. Currently, I am looking for an interesting challenge aligned with my
-                    a(href='#experience')  experience and interests
-                    |  around the topics Internet, web and cloud. Anything further should be discussed individually. Your comments and offers are welcome.
-                hr
+                h2 #{ __('Summary') }
+                p.text-justify #{ __('summary_p1') }
+                p.text-justify #{ __('summary_p2') }
+                p.text-justify #{ __('summary_p3') }
         div.row
             div.medium-12.columns
-                h2 Education
-                h3 Studies
+                hr
+                h2 #{ __('Work History') }
                 table
                     tr
                         th.first1
                         th
                     tr
-                        td 2006 - 2015
+                        td.colon 2006 - 2015
                         td
-                            p Business administration at <a href="http://www.unisg.ch/en/studium/bachelor/majorbetriebswirtschaftslehre">University of St. Gallen (HSG)</a>
-                            p Degree as Bachelor of Arts HSG in Business Administration (B.A. HSG)
-                            p Main fields of study are business administration, economics and law
-                            p Bachelor thesis on communication standards of the Internet of Things
+                            p
+                                a(href='http://www.netmodule.com', target='_blank') NetModule AG
+                                | , #{ __('Product Manager and Account Manager') }
+                            p.text-justify  #{ __('netmodulePm') }
+                    tr
+                        td.colon 2005 - 2006
+                        td
+                            p
+                                a(href='http://www.netmodule.com', target='_blank') NetModule AG
+                                | , #{ __('Inside Sales Engineer') }
+                            p.text-justify  #{ __('netmoduleSales') }
+                    tr
+                        td.colon 2004
+                        td
+                            p #{ __('voluntaryService') }
+                    tr
+                        td.colon 2003
+                        td
+                            a(href='http://www.paulielektro.ch', target='_blank') Pauli Elektro AG
+                            | , #{ __('Electrician') }
+                            p.text-justify #{ __('pauli') }
+        div.row
+            div.medium-12.columns
+                h2 #{ __('Education') }
+                h3 #{ __('Studies') }
+                table
+                    tr
+                        th.first1
+                        th
+                    tr
+                        td.colon 2006 - 2015
+                        td
+                            p #{ __('Business administration at') }
+                                a(href='http://www.unisg.ch/en/studium/bachelor/majorbetriebswirtschaftslehre', target='_blank')
+                                    |  #{ __('University of St. Gallen (HSG)') }
+                            p #{ __('Degree as Bachelor of Arts HSG in Business Administration (B.A. HSG)') }
+                            p #{ __('Main fields of study are business administration, economics and law') }
+                            p #{ __('Specialization on General Management') }
+                            p #{ __('Bachelor thesis on communication standards of the Internet of Things') }
+                            p #{ __('Consulting') + ' ' }
+                                a(href='https://www.swisscom-smartlife.ch/', target='_blank') Swisscom
+                                | #{ ' ' +  __('and') + ' ' }
+                                a(href='http://www.comfylight.com/', target='_blank') ComfyLight
+                                | #{ ' ' + __('with their smart home projects') }
                 table
                     tr
                         th.first1
@@ -143,141 +179,179 @@ block content
                     tr
                         td 1999 - 2003
                         td
-                            p Electrical engineering at <a href="https://www.bfh.ch/en/studies/bachelor/engineering_and_information_technology/electrical_and_communication_engineering.html">Bern University of Applied Sciences (BFH)</a>
-                            p Degree as Ingenieur FH which corresponds to a Bachelor of Science in electrical engineeing (Dipl. Ing. FH)
-                            p Main fields of study are electrical engineering, mathematics and computer science
-                            p Specialization on Embedded Systems, communication networks and Internet
-                h3 Apprenticeship
+                            p #{ __('Electrical engineering at ') }
+                                a(href="https://www.bfh.ch/en/studies/bachelor/engineering_and_information_technology/electrical_and_communication_engineering.html", target='_blank')
+                                    |  #{ __('Bern University of Applied Sciences (BFH)') }
+                            p #{ __('Degree as Ingenieur FH which corresponds to a Bachelor of Science in electrical engineeing (Dipl. Ing. FH)') }
+                            p #{ __('Main fields of study are electrical engineering, mathematics and computer science') }
+                            p #{ __('Specialization on Embedded Systems, communication networks and Internet') }
+                h3 #{ __('Apprenticeship') }
                     table
                         tr
                             th.first1
                             th
                         tr
-                            td 1995 - 1999
+                            td.colon 1995 - 1999
                             td
-                                p Professional maturity of technical type at <a href="https://www.gibb.ch/Berufsmaturitaet">Gewerblich-Industrielle Berufsschule Bern (gibb)</a>
+                                p #{ __('Professional maturity of technical type at') }
+                                    a(href="https://www.gibb.ch/Berufsmaturitaet", target='_blank')
+                                        |  Gewerblich-Industrielle Berufsschule Bern (gibb)
                         tr
                             td
-                            td Apprenticeship as electrician at Ascom Installationen AG in Bern
-                h3 Languages
+                            td #{ __('Apprenticeship as electrician at Ascom Installationen AG in Bern') }
+                h3 #{ __('Elementary School') }
                     table
                         tr
                             th.first1
                             th
                         tr
-                            td German
-                            td Native language
+                            td.colon 1990 - 1995
+                            td Sekundarschule Zollbrück
                         tr
-                            td English
-                            td Excellent, nearly native skills, <a href='http://www.europaeischer-referenzrahmen.de/'>GER C2</a> / Niveau II HSG, stay in Australia in 2004
+                            td.colon 1985 - 1990
+                            td
+                                p Primarschule Niederbach
+
+                h3 #{ __('Languages') }
+                    table
                         tr
-                            td French
-                            td Advanced, competent skills, <a href='http://www.europaeischer-referenzrahmen.de/'>GER C1</a> / Niveau I HSG
+                            th.first1
+                            th
                         tr
-                            td Spanish
-                            td Basic skills
+                            td.colon #{ __('German') }
+                            td #{ __('Native language') }
+                        tr
+                            td.colon #{ __('English') }
+                            td #{ __('Excellent, nearly native skills') + ': ' }
+                                a(href='http://www.europaeischer-referenzrahmen.de/', target='_blank') GER C2
+                                |  / Niveau II HSG,
+                                |  #{ __('stay in Australia in 2004') }
+
+                        tr
+                            td.colon #{ __('French') }
+                            td #{ __('Advanced, competent skills') + ': ' }
+                                a(href='http://www.europaeischer-referenzrahmen.de/', target='_blank') GER C1
+                                |  / Niveau I HSG
+                        tr
+                            td.colon #{ __('Spanish') }
+                            td #{ __('Basic skills') }
+
         div.row
             div.medium-12.columns
                 hr
-                h2 Work History
-                table
-                    tr
-                        th.first1
-                        th
-                    tr
-                        td 2005 - 2015
-                        td
-                            a(href='http://www.netmodule.com') NetModule AG
-                            |, product manager and account manager
-                    tr
-                        td 2003
-                        td
-                            a(href='http://paulielektro.ch') Pauli Elektro AG
-                            |, electrician
-        div.row
-            div.medium-12.columns
-                hr
-                h2(id='experience') Experience and Interests
-                h3 Business Analysis and Consulting
+                h2(id='experience') #{ __('Experience and Interests') }
+                h3 #{ __('General Management')}
                     table
                         tr
                             th.first
                             th
                         tr
-                            td Environmental Analysis
-                            td Customer analysis, industry analysis / five forces (Porter), PEST analysis
+                            td.colon #{ __('External Analysis') + ' (MBV)' }
+                            - var emethods = __('Five Forces') + ', ' + __('Competitive Profile Matrix / Benchmarking') + ', ' + __('PEST analysis') + ', ' + __('Stakeholder analysis');
+                            td #{ emethods }
                         tr
-                            td Internal Analysis
-                            td Growth–share matrix (BGC), 7-S model (McKinsey), VRIO framework (Barney), identification of core competency (Prahalad/Hamel), SWOT analysis (Harvard Business School)
+                            td.colon #{ __('Internal Analysis') + ' (RBV/CBV)' }
+                            td #{ __('McKinsey 7S Framework') }, #{ __('Core competency') }, #{ __('VRIO framework') }, #{ __('Value chain') }
                         tr
-                            td Business Model Innovation
-                            td Business Model Canvas (Osterwalder), St. Galler Business Model Navigator (Gassmann), St. Galler General Management Navigator (Müller-Stewens)
+                            td.colon #{ __('Strategy Development') }
+                            td #{ __('BCG growth-share matrix') }, #{ __('GE-McKinsey nine-box matrix') }, #{ __('SWOT analysis') }, #{ __('Balanced Scorecard') }
                         tr
-                            td Business Process Management
-                            td Business Process Model and Notation (BPMN), Event-driven Process Chains (EPC), end-to-end digitization of processes
+                            td.colon #{ __('Technology Management') }
+                            td #{ __('Technology Adoption Lifecycle') }, #{ __('Disruptive innovation') }
                         tr
-                            td Technology Management
-                            td Technology Adoption Lifecycle (Rogers), The Innovator's Dilemma (Christensen)
+                            td.colon #{ __('Innovation Management') }
+                            td Open Innovation, Strategische Suchfeldanalyse, Management des geistigen Eigentums, Einhaltung von FOSS-Lizenzen und Patenten
                         tr
-                            td Innovation Management
-                            td Open innovation (Chesbrough), Strategische Suchfeldanalyse (Müller-Stewens)
-                h3 M2M/IoT Communication
+                            td.colon #{ __('Business Model Innovation') }
+                            td Business Model Canvas (Osterwalder), St. Galler Business Model Navigator (Gassmann)
+                        tr
+                            td.colon #{ __('Business Process Management') }
+                            td Architektur integrierter Informationssysteme (ARIS), Business Process Model and Notation (BPMN), Ereignisgesteuerte Prozessketten (EPK)
+                 h3 #{ __('Product Management') }
                     table
                         tr
                             th.first
                             th
                         tr
-                            td Applications
-                            td Wireless Internet access, remote control, preventive maintenance, vehicle communication, passenger information, entertainment and WLAN
+                            td.colon Lifecycle Management
+                            td #{ __('Requirements management') + ', ' + __('test and quality management') + ', ' + __('build and release management') + ', ' + __('variant management') + ', ' + __('issue and defect management') }
                         tr
-                            td Networking
+                            td.colon #{ __('Marketing Mix') }
+                            td #{ __('Product') + ', ' + __('price') + ', ' + __('promotion') + ', ' + __('distribution')  }
+                h3 #{ __('Project Management') }
+                    table
+                        tr
+                            th.first
+                            th
+                        tr
+                            td.colon #{ __('Product Engineering') }
+                            td #{ __('Agile methods like Scrum') + ', ' + 'DevOps / Continuous Delivery' }
+                        tr
+                            td.colon #{ __('Customer Projects') }
+                            td #{ __('PRD') + ', ' + __('Specifications') + ', ' + __('Quality Gates') }
+                h3 #{ __('M2M/IoT Communication') }
+                    table
+                        tr
+                            th.first
+                            th
+                        tr
+                            td.colon #{ __('Applications') }
+                            td #{ __('remote control') + ', ' + __('preventive maintenance') + ', ' + __('vehicle communication') + ', ' + __('passenger information, entertainment') + ', ' + __('Wireless Internet access')  }
+                        tr
+                            td.colon #{ __('Network Engineering') }
                             td Routing, VPN, NAT, Firewall, Bridging
                         tr
-                            td Wireless Standards
-                            td LTE, UMTS, GSM, WLAN, WPAN, BTLE
+                            td.colon #{ __('Wireless Standards') }
+                            td LTE, UMTS, GSM, WLAN, WPAN,
+                                a(href='http://www.bluetooth.com/what-is-bluetooth-technology/bluetooth-technology-basics/low-energy', target='_blank')  Bluetooth Low Energy
                         tr
-                            td General Internet Protocols
+                            td.colon #{ __('Internet Protocols') }
                             td IP, HTTP, FTP, SSH, IPSec, OpenVPN
                         tr
-                            td IoT Protocols
-                            td IPv6, 6LoWPAN, CoAP, MQTT, WebSocket
-                h3 Product and Project Management
+                            td.colon #{ __('IoT Protocols') }
+                            td IPv6, 6LoWPAN,
+                                a(href='http://coap.technology/', target='_blank')  CoAP
+                                | , MQTT,  WebSocket
+                        tr
+                            td.colon Embedded Linux
+                            td
+                                a(href='https://openwrt.org/', target='_blank') OpenWRT
+                                |  - Linux distribution for embedded devices
+                        tr
+                            td.colon Cloud Computing
+                            td IaaS (OpenStack), PaaS (Cloud Foundry)
+                h3 #{ __('Software und Web Development') }
                     table
                         tr
                             th.first
                             th
                         tr
-                            td Application Lifecycle Management
-                            td Requirements management, test and quality management, issue and defect management, resource management, build and release management, variant management
-                        tr
-                            td Development Methods
-                            td Agile methods, Scrum, continuous integration, V-model
-                    table
-                h3 Software and Web Development
-                    table
-                        tr
-                            th.first
-                            th
-                        tr
-                            td Frontend Development
+                            td.colon #{ __('Frontend Development') }
                             td
-                                p Responsive web design with HTML5, CSS3/Sass based on frameworks such as Bootstrap or Foundation
-                                p Single Page Applications (SPA) with Angular
+                                p #{ __('Responsive web design with HTML5') + ', ' + __('CSS3/Sass based on frameworks such as') + ' '}
+                                    a(href='http://getbootstrap.com/' target='_blank') Bootstrap
+                                    | #{  ' ' + __('or') + ' '}
+                                    a(href='http://foundation.zurb.com/' target='_blank') Foundation
+                                p #{ __('Single Page Applications (SPA) with Angular')}
                         tr
-                            td Backend and API Development
+                            td.colon #{ __('Backend and API Development') }
                             td
-                                p Web applications with Node.js using framework such as Express/Sails and mongoDB
+                                p #{ __('Web applications with')}
+                                    a(href='https://nodejs.org', target='_blank')  Node.js
+                                    |  #{ __('using frameworks such as') }
+                                    a(href='http://expressjs.com/', target='_blank')  Express,
+                                    a(href='http://sailsjs.org/', target='_blank')  Sails,
+                                    |  #{ __('and the') }
+                                    a(href='https://www.mongodb.org/', target='_blank')  mongoDB
+                                    |  #{ __('database') }
                                 p HTTP REST APIs
                         tr
-                            td Development Tools
+                            td.colon #{ __('Development Tools') }
                             td WebStorm, Git, Subversion (SVN), Node Package manager (npm), Bower
                         tr
-                            td Operating Systems
-                            td Windows, Linux Desktop/Server (Ubuntu, Debian), Mac OS, Embedded Linux (OpenWRT)
+                            td.colon #{ __('Operating Systems') }
+                            td Windows, Linux Desktop/Server (Ubuntu, Debian), Mac OS
                         tr
-                            td Virtualization
+                            td.colon #{ __('Virtualization') }
                             td Linux Containers (LXC), VirtualBox
-                        tr
-                            td Cloud Computing
-                            td IaaS (OpenStack), PaaS (Cloud Foundry)
 
